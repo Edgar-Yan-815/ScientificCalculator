@@ -125,7 +125,33 @@ class Calculator{
         void mult(double num1, double num2){
         }
 
-        void div(double num1, double num2){
+        string div(string numorator, string denominator){
+            string ret="";
+            string remainder="0";
+            int i=0,j=0;
+            int n=numorator.length();
+            while (j<n){
+                string num=add("0","0");
+                bool larger=compare(num,denominator);
+                if (larger){
+                    bool remainder=false;
+                    string largest="";
+                    int k=1;
+                    for (k;k<10;k++){
+                        string res=sub(num,denominator);
+                        if (res[0]=='-'){
+                            k--;
+                            ret+=('0'+k);
+                            break;
+                        }
+                    }
+                } else{
+                    string temp=num;
+                    num=denominator;
+                    denominator=temp;
+                }
+                j++;
+            }
         }
 
         void modulo(double num1, double num2){
